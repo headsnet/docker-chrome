@@ -1,0 +1,19 @@
+
+version: '3.7'
+
+services:
+
+  # https://github.com/SeleniumHQ/docker-selenium
+  chrome:
+    image: selenium/standalone-chrome-debug:3.7.1
+    restart: always
+    networks:
+      - chrome
+    expose:
+      - 4444
+      - 5900
+
+
+networks:
+  chrome:
+    name: chrome
