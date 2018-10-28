@@ -5,14 +5,17 @@ services:
 
   # https://github.com/SeleniumHQ/docker-selenium
   chrome:
-    image: selenium/standalone-chrome-debug:3.7.1
+    image: selenium/standalone-chrome-debug:3.14.0-iron
+    container_name: chrome
     restart: always
     networks:
       - chrome
+    volumes:
+      - /dev/shm:/dev/shm
     expose:
       - 4444
-      - 5900
-
+    ports:
+      - '5900:5900'
 
 networks:
   chrome:
